@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: all .3s ease-in-out;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.active {
+  color: blue;
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  background-color: blue;
+  bottom: -3px;
+  left: 0;
+}
