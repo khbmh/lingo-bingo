@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div className="border-t">
-      <footer className="footer flex justify-around bg-white text-base-content p-10">
+      <footer className="footer flex flex-col lg:flex-row w-full justify-around bg-white text-base-content p-10">
         <nav>
           <h6 className="footer-title text-[#3F00E7]">Services</h6>
           <a className="link link-hover">Branding</a>
