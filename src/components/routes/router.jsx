@@ -6,6 +6,9 @@ import Profile from '../pages/Profile';
 import StartLearning from '../pages/StartLearning';
 import Tutorials from '../pages/Tutorials';
 import AboutUs from '../pages/AboutUs';
+import Register from '../pages/Register';
+import Login from '../pages/Login';
+import ForgotPass from '../pages/ForgotPass';
 {
   /* <NavLink to="/home">Home</NavLink>
 <NavLink to="/start-learning">Start Learning</NavLink>
@@ -22,6 +25,21 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: <Home />,
+          // loader: teamLoader,
+        },
+        {
+          path: 'login',
+          element: <Login />,
+          // loader: teamLoader,
+        },
+        {
+          path: 'forgotPassword',
+          element: <ForgotPass />,
+          // loader: teamLoader,
+        },
+        {
+          path: 'register',
+          element: <Register />,
           // loader: teamLoader,
         },
         {
@@ -54,7 +72,7 @@ const router = createBrowserRouter(
   ],
   {
     future: {
-      v7_startTransition: true, 
+      v7_startTransition: true,
     },
   },
 );

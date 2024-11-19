@@ -4,14 +4,12 @@ function Navbar() {
   // Home, start-learning, tutorials,  about-us
   const user = true;
   const menu = (
-    <ul className="flex flex-col lg:flex-row gap-6 xl:gap-10 font-semibold">
+    <ul className="flex flex-col lg:flex-row gap-3 lg:gap-6 xl:gap-10 font-semibold p-4 lg:p-0">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/start-learning">Start Learning</NavLink>
       <NavLink to="/tutorials">Tutorials</NavLink>
       <NavLink to="/about-us">About Us</NavLink>
-      {user && (
-        <NavLink to="/profile">Profile</NavLink>
-      )}
+      {user && <NavLink to="/profile">Profile</NavLink>}
     </ul>
   );
 
@@ -52,8 +50,12 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
         <div className="navbar-end space-x-3">
-          <a className="btn btn-primary">Login</a>
-          <a className="btn btn-outline btn-primary">Register</a>
+          <Link to="/login" className="btn btn-primary">
+            Login
+          </Link>
+          <Link to="/register" className="btn btn-outline btn-primary">
+            Register
+          </Link>
         </div>
       </div>
     </div>

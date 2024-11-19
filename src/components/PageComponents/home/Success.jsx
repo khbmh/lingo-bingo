@@ -20,7 +20,7 @@ function Success() {
           num={400}
           comment="Added on regular basis."
         />
-        <CountCard title="Total Tutorials" num={30} comment="More to come." />
+        <CountCard title="Total Tutorials" num={30} comment="More to come" />
       </div>
     </>
   );
