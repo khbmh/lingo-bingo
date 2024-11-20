@@ -4,7 +4,7 @@ function Navbar() {
   // Home, start-learning, tutorials,  about-us
   const user = true;
   const menu = (
-    <ul className="flex flex-col lg:flex-row gap-3 lg:gap-6 xl:gap-10 font-semibold p-4 lg:p-0">
+    <ul className="flex z-40 flex-col lg:flex-row gap-3 lg:gap-6 xl:gap-10 font-semibold p-4 lg:p-0">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/start-learning">Start Learning</NavLink>
       <NavLink to="/tutorials">Tutorials</NavLink>
@@ -14,7 +14,7 @@ function Navbar() {
   );
 
   return (
-    <div>
+    <div className="z-30">
       <div className="navbar bg-base-100 border-b">
         <div className="navbar-start">
           <div className="dropdown">
@@ -36,7 +36,7 @@ function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm z-[300] dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow"
             >
               {menu}
             </ul>
