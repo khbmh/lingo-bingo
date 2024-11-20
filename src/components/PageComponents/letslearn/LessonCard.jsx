@@ -21,9 +21,14 @@ function LessonCard() {
             src={lesson.image}
             alt=""
           />
-          <p className="bg-blue-100 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
+         <div className='flex items-center justify-between w-full px-4'>
+         <p className="bg-blue-100 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
             {lesson.lesson_difficulty}
           </p>
+         <p className="bg-blue-50 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
+            {lesson.words.length} words
+          </p>
+         </div>
         </Link>
       ))}
     </div>
