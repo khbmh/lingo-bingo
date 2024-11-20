@@ -3,6 +3,7 @@ export const AllContext = createContext();
 function AllContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(
       'https://raw.githubusercontent.com/khbmh/lingo-bingo-json/refs/heads/main/info.json',
@@ -18,7 +19,9 @@ function AllContextProvider({ children }) {
   }
 
   return (
-    <AllContext.Provider value={{ user, data, pronounceWord }}>
+    <AllContext.Provider
+      value={{ user, data, pronounceWord, loader, setLoader }}
+    >
       {children}
     </AllContext.Provider>
   );
