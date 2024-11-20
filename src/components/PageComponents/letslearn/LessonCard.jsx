@@ -4,13 +4,6 @@ import { Link } from 'react-router-dom';
 
 function LessonCard() {
   const { data } = useContext(AllContext);
-  /*
-image
-lesson_difficulty
-lesson_id
-lesson_name
-lesson_name_ar
-  */
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 justify-around xl:gap-12 p-4 lg:px-12">
       {data.map((lesson) => (

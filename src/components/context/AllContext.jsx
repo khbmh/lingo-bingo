@@ -10,8 +10,17 @@ function AllContextProvider({ children }) {
       .then((response) => response.json())
       .then((data) => setData(data));
   }, []);
+
+  function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'ja-JP'; // Japanese
+    window.speechSynthesis.speak(utterance);
+  }
+
   return (
-    <AllContext.Provider value={{ user, data }}>{children}</AllContext.Provider>
+    <AllContext.Provider value={{ user, data, pronounceWord }}>
+      {children}
+    </AllContext.Provider>
   );
 }
 

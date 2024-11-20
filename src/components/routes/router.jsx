@@ -9,6 +9,7 @@ import AboutUs from '../pages/AboutUs';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import ForgotPass from '../pages/ForgotPass';
+import SingleLesson from '../pages/SingleLesson';
 {
   /* <NavLink to="/home">Home</NavLink>
 <NavLink to="/start-learning">Start Learning</NavLink>
@@ -25,47 +26,42 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: <Home />,
-          // loader: teamLoader,
         },
         {
           path: 'login',
           element: <Login />,
-          // loader: teamLoader,
         },
         {
           path: 'forgotPassword',
           element: <ForgotPass />,
-          // loader: teamLoader,
         },
         {
           path: 'register',
           element: <Register />,
-          // loader: teamLoader,
         },
         {
           path: 'about-us',
           element: <AboutUs />,
-          // loader: teamLoader,
         },
         {
           path: 'tutorials',
           element: <Tutorials />,
-          // loader: teamLoader,
         },
         {
           path: 'start-learning',
           element: <StartLearning />,
-          // loader: teamLoader,
+        },
+        {
+          path: `lessons/:url`,
+          element: <SingleLesson />,
         },
         {
           path: 'profile',
           element: <Profile />,
-          // loader: teamLoader,
         },
         {
           path: '/',
           element: <Home />,
-          // loader: teamLoader,
         },
       ],
     },
