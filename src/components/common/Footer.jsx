@@ -1,3 +1,5 @@
+import { RiCopyrightLine } from 'react-icons/ri';
+
 function Footer() {
   return (
     <div className="border-t">
@@ -55,6 +57,14 @@ function Footer() {
           </div>
         </nav>
       </footer>
+      <p className="pb-2 mb-2 font-semibold text-center">
+        &copy; 2024 Lingo Bingo. All rights reserved.
+      </p>
+      <div className="flex justify-center">
+        <a href="http://khbmh.github.io/mahi" target='blank' className="pb-2 text-sm w-fit cursor-pointer">
+          Made by Mahi
+        </a>
+      </div>
     </div>
   );
 }

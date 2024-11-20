@@ -8,7 +8,7 @@ function Heading({ title, description }) {
       onEnter={() => setVisible(true)}
       onExit={() => setVisible(false)}
     >
-      <div className="flex flex-col items-center justify-center gap-3 text-center max-w-[650px] px-2 my-5 transition-transform duration-500 ease-in-out">
+      <div className="w-full mx-auto flex flex-col items-center justify-center gap-3 text-center max-w-[650px] px-2 my-5 transition-transform duration-500 ease-in-out">
         <h1
           className={`text-4xl font-bold ${
             visible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
