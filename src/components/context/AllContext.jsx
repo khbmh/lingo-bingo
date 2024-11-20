@@ -13,7 +13,7 @@ function AllContextProvider({ children }) {
 
   function pronounceWord(word) {
     const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = 'ja-JP'; // Japanese
+    utterance.lang = 'ar-SA';
     window.speechSynthesis.speak(utterance);
   }
 
