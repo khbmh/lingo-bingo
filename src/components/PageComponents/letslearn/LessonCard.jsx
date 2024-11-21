@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 function LessonCard() {
   const { data } = useContext(AllContext);
-  console.log(data);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 justify-around xl:gap-12 p-4 lg:px-12">
       {data.map((lesson) => (
@@ -21,14 +20,14 @@ function LessonCard() {
             src={lesson.image}
             alt=""
           />
-         <div className='flex items-center justify-between w-full px-4'>
-         <p className="bg-blue-100 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
-            {lesson.lesson_difficulty}
-          </p>
-         <p className="bg-blue-50 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
-            {lesson.words.length} words
-          </p>
-         </div>
+          <div className="flex items-center justify-between w-full px-4">
+            <p className="bg-blue-100 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
+              {lesson.lesson_difficulty}
+            </p>
+            <p className="bg-blue-50 px-4 py-1 rounded-2xl text-sm font-semibold w-fit">
+              {lesson.words.length} words
+            </p>
+          </div>
         </Link>
       ))}
     </div>
