@@ -6,7 +6,8 @@ import toast from 'react-hot-toast';
 function Login() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { userLogin, setUser } = useContext(AllContext);
+  const { userLogin, setUser, handleGoogleLogin } = useContext(AllContext);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -73,7 +74,10 @@ function Login() {
           </Link>
         </form>
         <p className="text-center -mt-4 mb-4">Or</p>
-        <div className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full">
+        <div
+          onClick={handleGoogleLogin}
+          className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full"
+        >
           <button className="w-full flex items-center justify-center py-2 px-6 rounded-full">
             login with Google
             <p className="ml-2" aria-label="Google Sign-in">

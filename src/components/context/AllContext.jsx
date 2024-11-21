@@ -1,11 +1,13 @@
 import { createContext, useEffect, useState } from 'react';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  GoogleAuthProvider,
   updateProfile,
+  signInWithPopup,
 } from 'firebase/auth';
 import auth from './firebase.config';
 
@@ -13,6 +15,7 @@ export const AllContext = createContext();
 function AllContextProvider({ children }) {
   const [user, setUser] = useState(false);
   const [userLoading, setUserLoading] = useState(true);
+
   const createNewUser = (email, password) => {
     setUserLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -25,6 +28,21 @@ function AllContextProvider({ children }) {
   const logOut = () => {
     setUserLoading(true);
     signOut(auth);
+  };
+  const handleGoogleLogin = () => {
+    setUserLoading(true);
+    const googleProvider = new GoogleAuthProvider();
+    signInWithPopup(auth, googleProvider)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setUser(user);
+        toast.success('Logged in successfully');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        toast.error(errorCode, ' ', errorMessage);
+      });
   };
   const updateUserProfile = (updatedUser) => {
     return updateProfile(auth.currentUser, updatedUser);
@@ -57,6 +75,7 @@ function AllContextProvider({ children }) {
   return (
     <AllContext.Provider
       value={{
+        handleGoogleLogin,
         updateUserProfile,
         logOut,
         userLoading,

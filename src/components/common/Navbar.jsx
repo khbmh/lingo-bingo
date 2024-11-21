@@ -18,9 +18,7 @@ function Navbar() {
   return (
     <div className="h-[10vh] md:h-[7vmin] lg:h-[8vmin]">
       <div
-        className={`navbar backdrop-blur-md border-b ${
-          userLoading && 'invisible'
-        } fixed w-full top-0 z-30`}
+        className={`navbar backdrop-blur-md border-b fixed w-full top-0 z-30`}
       >
         <div className="navbar-start">
           <div className="dropdown">
@@ -56,7 +54,7 @@ function Navbar() {
           <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
         {!user ? (
-          <div className="navbar-end space-x-3">
+          <div className={`${userLoading && 'invisible'} navbar-end space-x-3`}>
             <Link to="/login" className="btn btn-primary text-white">
               Login
             </Link>
@@ -65,9 +63,12 @@ function Navbar() {
             </Link>
           </div>
         ) : (
-          <div className="navbar-end space-x-3">
-            <Link to="/profile" className="mx-2 text-[blue]">
-              {user.email}
+          <div className={`${userLoading && 'invisible'} navbar-end space-x-3`}>
+            <Link
+              to="/profile"
+              className="mx-2 text-[blue] font-semibold text-xl"
+            >
+              👋 {user.displayName}
             </Link>
             <p onClick={logOut} className="btn btn-outline btn-primary">
               LogOut

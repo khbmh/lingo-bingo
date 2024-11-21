@@ -4,8 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { AllContext } from '../context/AllContext';
 function Register() {
-  const { logOut } = useContext(AllContext);
-  // const location = useLocation();
+  const { logOut,handleGoogleLogin } = useContext(AllContext);
   const navigate = useNavigate();
   const { createNewUser, setUser, updateUserProfile } = useContext(AllContext);
 
@@ -96,7 +95,7 @@ function Register() {
           </Link>
         </form>
         <p className="text-center -mt-4 mb-4">Or</p>
-        <div className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full">
+        <div onClick={handleGoogleLogin} className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full">
           <button className="w-full flex items-center justify-center py-2 px-6 rounded-full">
             login with Google
             <p className="ml-2" aria-label="Google Sign-in">
