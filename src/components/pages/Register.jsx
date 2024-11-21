@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { AllContext } from '../context/AllContext';
 function Register() {
-  const { logOut,handleGoogleLogin } = useContext(AllContext);
+  const { logOut, handleGoogleLogin } = useContext(AllContext);
   const navigate = useNavigate();
   const { createNewUser, setUser, updateUserProfile } = useContext(AllContext);
 
@@ -14,8 +14,15 @@ function Register() {
     const image = e.target.image.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     if (password == email) {
       return toast.error('same same');
+    }
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.{6,})/;
+    if (!passwordRegex.test(password)) {
+      return toast.error(
+        'Password must have at least 1 uppercase letter, 1 lowercase letter, and be at least 6 characters long',
+      );
     }
 
     createNewUser(email, password)
@@ -95,7 +102,10 @@ function Register() {
           </Link>
         </form>
         <p className="text-center -mt-4 mb-4">Or</p>
-        <div onClick={handleGoogleLogin} className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full">
+        <div
+          onClick={handleGoogleLogin}
+          className="flex flex-col items-center justify-center mb-10 bg-blue-100 w-fit mx-auto rounded-full"
+        >
           <button className="w-full flex items-center justify-center py-2 px-6 rounded-full">
             login with Google
             <p className="ml-2" aria-label="Google Sign-in">
