@@ -16,7 +16,7 @@ function Navbar() {
   );
 
   return (
-    <div className="h-[7vh] md:h-[7vmin] lg:h-[8vmin]">
+    <div className="h-[10vh] md:h-[7vmin] lg:h-[8vmin]">
       <div
         className={`navbar backdrop-blur-md border-b ${
           userLoading && 'invisible'

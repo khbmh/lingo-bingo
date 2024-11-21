@@ -1,4 +1,5 @@
 import AboutUs from '../PageComponents/home/AboutUs';
+import FAQ from '../PageComponents/home/FAQ';
 import Feedback from '../PageComponents/home/Feedback';
 import Hero from '../PageComponents/home/Hero';
 import Success from '../PageComponents/home/Success';
@@ -10,6 +11,7 @@ function Home() {
       <AboutUs />
       <Success />
       <Feedback />
+      <FAQ />
     </div>
   );
 }
