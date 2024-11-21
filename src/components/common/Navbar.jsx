@@ -1,8 +1,10 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AllContext } from '../context/AllContext';
 
 function Navbar() {
   // Home, start-learning, tutorials,  about-us
-  const user = true;
+  const { user, logOut, userLoading } = useContext(AllContext);
   const menu = (
     <ul className="flex z-40 flex-col lg:flex-row gap-3 lg:gap-6 xl:gap-10 font-semibold p-4 lg:p-0">
       <NavLink to="/">Home</NavLink>
@@ -14,8 +16,12 @@ function Navbar() {
   );
 
   return (
-    <div className="z-30">
-      <div className="navbar bg-base-100 border-b">
+    <div className="h-[7vh] md:h-[7vmin] lg:h-[8vmin]">
+      <div
+        className={`navbar backdrop-blur-md border-b ${
+          userLoading && 'invisible'
+        } fixed w-full top-0 z-30`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,14 +55,25 @@ function Navbar() {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menu}</ul>
         </div>
-        <div className="navbar-end space-x-3">
-          <Link to="/login" className="btn btn-primary">
-            Login
-          </Link>
-          <Link to="/register" className="btn btn-outline btn-primary">
-            Register
-          </Link>
-        </div>
+        {!user ? (
+          <div className="navbar-end space-x-3">
+            <Link to="/login" className="btn btn-primary text-white">
+              Login
+            </Link>
+            <Link to="/register" className="btn btn-outline btn-primary">
+              Register
+            </Link>
+          </div>
+        ) : (
+          <div className="navbar-end space-x-3">
+            <Link to="/profile" className="mx-2 text-[blue]">
+              {user.email}
+            </Link>
+            <p onClick={logOut} className="btn btn-outline btn-primary">
+              LogOut
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ function Hero() {
           The free, fun, and effective way to{' '}
           <span className="text-[blue]">learn</span> a language!
         </h1>
-        <Link to="/register" className="animate__animated animate__slideInUp btn btn-primary w-full">
+        <Link to="/register" className="animate__animated animate__slideInUp btn btn-primary text-white w-full">
           GET STARTED
         </Link>
         <Link to="/login" className="animate__animated animate__slideInUp btn btn-primary btn-outline w-full">

@@ -1,9 +1,11 @@
 function ForgotPass() {
   const handleReset = (e) => {
     e.preventDefault();
+    const email = e.target.email.value;
+    console.log(email);
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh]">
+    <div className="flex flex-col my-6 items-center justify-center min-h-[70vh]">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form className="card-body" onSubmit={handleReset}>
           <div className="form-control">
@@ -12,6 +14,7 @@ function ForgotPass() {
             </label>
             <input
               type="email"
+              name="email"
               placeholder="email"
               className="input input-bordered"
               required

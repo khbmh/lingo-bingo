@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CountCard from '../../common/CountCard';
 import Heading from '../../common/Heading';
 
@@ -8,7 +9,7 @@ function Success() {
         title="Platform Statistics"
         description="See key metrics highlighting our growth, including total users, lessons, words, and tutorials constantly updated to enhance your learning journey"
       />
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-12 mb-10">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-12 mb-6">
         <CountCard
           title="Total Users"
           num={2400}
@@ -21,6 +22,11 @@ function Success() {
           comment="Added on regular basis."
         />
         <CountCard title="Total Tutorials" num={30} comment="More to come" />
+      </div>
+      <div className="flex justify-center gap-4 mb-8">
+        <Link to="/start-learning" className="btn btn-primary text-white">
+          Start Learning
+        </Link>
       </div>
     </>
   );

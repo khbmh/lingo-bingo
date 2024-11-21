@@ -10,6 +10,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import ForgotPass from '../pages/ForgotPass';
 import SingleLesson from '../pages/SingleLesson';
+import PrivateRoute from '../privateRoute/PrivateRoute';
 
 const Router = createBrowserRouter([
   {
@@ -39,7 +40,11 @@ const Router = createBrowserRouter([
       },
       {
         path: 'tutorials',
-        element: <Tutorials />,
+        element: (
+          <PrivateRoute>
+            <Tutorials />,
+          </PrivateRoute>
+        ),
       },
       {
         path: 'start-learning',
@@ -47,11 +52,19 @@ const Router = createBrowserRouter([
       },
       {
         path: `lessons/:url`,
-        element: <SingleLesson />,
+        element: (
+          <PrivateRoute>
+            <SingleLesson />
+          </PrivateRoute>
+        ),
       },
       {
         path: 'profile',
-        element: <Profile />,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/',

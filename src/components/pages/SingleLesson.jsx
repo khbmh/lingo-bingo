@@ -30,7 +30,7 @@ function SingleLesson() {
   return (
     <div>
       <Heading title={lesson.lesson_name} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 gap-y-7 justify-around xl:gap-12 p-4 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-14 gap-5 gap-y-7 justify-around xl:gap-12 p-4 lg:px-12">
         {lesson.words.map((word) => {
           return (
             <div

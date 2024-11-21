@@ -21,7 +21,7 @@ function AboutUs() {
           description="Our vision is to become the leading global platform for language learning, renowned for its innovative, user-friendly approach and comprehensive resources. We aspire to create a vibrant community where learners can connect, practice, and thrive, ultimately helping them achieve fluency and cultural understanding in their chosen languages."
         />
       </div>
-      <Link to="/about-us" className="btn btn-primary">
+      <Link to="/about-us" className="btn btn-primary text-white">
         Learn More
       </Link>
     </div>
