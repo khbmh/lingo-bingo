@@ -3,10 +3,17 @@ import { AllContext } from '../context/AllContext';
 
 function Profile() {
   const { user } = useContext(AllContext);
-  console.log(user);
   return (
-    <div className="min-h-[40vh] flex flex-col items-center justify-center">
-      <p>{user.email}</p>
+    <div className="w-[90vw] mx-auto flex items-center text-center my-10">
+      <div className=''>
+        <img
+          className="h-[100px] w-[100px] rounded-full border object-cover"
+          src={user.photoURL}
+          alt={user.displayName}
+        />
+        <p className='text-2xl font-semibold'>{user.displayName}</p>
+        <p>{user.email}</p>
+      </div>
     </div>
   );
 }

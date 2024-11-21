@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 import auth from './firebase.config';
 
@@ -24,6 +25,9 @@ function AllContextProvider({ children }) {
   const logOut = () => {
     setUserLoading(true);
     signOut(auth);
+  };
+  const updateUserProfile = (updatedUser) => {
+    return updateProfile(auth.currentUser, updatedUser);
   };
   useEffect(() => {
     const unmount = onAuthStateChanged(auth, (currentUser) => {
@@ -53,6 +57,7 @@ function AllContextProvider({ children }) {
   return (
     <AllContext.Provider
       value={{
+        updateUserProfile,
         logOut,
         userLoading,
         userLogin,

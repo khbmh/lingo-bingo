@@ -7,7 +7,7 @@ function Register() {
   const { logOut } = useContext(AllContext);
   // const location = useLocation();
   const navigate = useNavigate();
-  const { createNewUser, setUser } = useContext(AllContext);
+  const { createNewUser, setUser, updateUserProfile } = useContext(AllContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -24,6 +24,7 @@ function Register() {
         // Signed up
         const user = userCredential.user;
         setUser(user);
+        updateUserProfile({ displayName: name, photoURL: image });
         toast.success('Account has been created');
         logOut();
         navigate('/login');
