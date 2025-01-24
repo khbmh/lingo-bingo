@@ -1,4 +1,3 @@
-import { RiCopyrightLine } from 'react-icons/ri';
 
 function Footer() {
   return (
