@@ -13,14 +13,14 @@ function Tutorials() {
     'https://www.youtube.com/embed/tXJlD2yywq8?si=gaQznZKO_KHZDoJ4',
   ];
   return (
-    <div className="container mx-auto mb-10">
+    <div className="container mx-auto mb-10 lg:overflow-x-hidden">
       <Heading
         title="Tutorials"
         description="Master new skills with our step-by-step video tutorials. Clear, concise, and easy to follow. Start learning now!
 
 "
       />
-      <div className="items-center justify-around grid grid-cols-1 md:grid-cols-2 gap-4 xl:gap-16 xl:grid-cols-3 p-1 md:p-4">
+      <div className="relative grid grid-cols-1 min-h-[40vh] lg:grid-cols-2 xl:grid-cols-3 items-center justify-center w-full mx-auto gap-4 p-4 md:ml-12">
         {tutorials.map((tut, id) => {
           return (
             <div className="w-[300px]" key={id}>
@@ -29,9 +29,7 @@ function Tutorials() {
                 height="200"
                 src={tut}
                 title="YouTube video player"
-                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
             </div>

@@ -5,6 +5,9 @@ import { AllContext } from '../context/AllContext';
 function Navbar() {
   // Home, start-learning, tutorials,  about-us
   const { user, logOut, userLoading } = useContext(AllContext);
+  const shortName = (name) => {
+    return name.split(' ')[0];
+  };
   const menu = (
     <ul className="flex z-40 flex-col lg:flex-row gap-3 lg:gap-6 xl:gap-10 font-semibold p-4 lg:p-0">
       <NavLink to="/">Home</NavLink>
@@ -66,9 +69,9 @@ function Navbar() {
           <div className={`${userLoading && 'invisible'} navbar-end space-x-3`}>
             <Link
               to="/profile"
-              className="mx-2 text-[blue] font-semibold text-xl"
+              className="mx-2 text-[blue] font-semibold text-sm lg:text-xl"
             >
-              👋 {user.displayName}
+              👋 {shortName(user.displayName)}
             </Link>
             <p onClick={logOut} className="btn btn-outline btn-primary">
               LogOut
